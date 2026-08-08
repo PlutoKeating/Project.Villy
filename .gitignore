@@ -31,6 +31,12 @@ venv/
 .DS_Store
 Thumbs.db
 *~
+*.swp
+*.swo
+
+# Editor config
+.python-version
+.envrc
 
 # Logs
 *.log
@@ -47,6 +53,7 @@ private/
 *.squashfs
 *.tar.gz
 *.tar.xz
+*.tar.bz2
 
 # Frontend build
 frontend/dist/

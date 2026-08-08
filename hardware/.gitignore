@@ -1,6 +1,6 @@
-# Photos are large, keep them out of git
-*.jpg
-*.png
-*.heic
-*.raw
+# Exclude large photos in teardown/ only
+teardown/*.jpg
+teardown/*.png
+teardown/*.heic
+teardown/*.raw
 !teardown/.gitkeep

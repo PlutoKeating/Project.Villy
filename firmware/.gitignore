@@ -2,5 +2,8 @@
 *.bin
 *.ext4
 *.squashfs
+*.tar.gz
+*.tar.xz
+*.tar.bz2
 out/
 build/

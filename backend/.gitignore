@@ -6,3 +6,4 @@ venv/
 instance/
 *.db
 .pytest_cache/
+.env
