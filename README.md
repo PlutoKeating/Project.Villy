@@ -1,137 +1,127 @@
-# Project.Villy
+# 🤖 Project.Villy
 
-> **逆向你，改造你，让你重获新生。**
->
-> Reverse engineering and secondary development of the Xiaomi Mi Robot Vacuum (SDJQR01RR) — transforming a first-generation robot vacuum into a Linux-powered, programmable, remote-controllable robot chassis.
+> **小米初代扫地机器人（SDJQR01RR）逆向工程与二次开发 —— 让它重获新生，变身可编程 Linux 机器人底盘。**
 
 ---
 
-## 🎯 Project Vision
+## 这是什么？
 
-I have an old **Xiaomi Mi Robot Vacuum (1st Gen, SDJQR01RR)** that's too outdated for daily use. Instead of letting it collect dust, I'm tearing it open to:
+我有一台 **小米扫地机器人 1 代（型号 SDJQR01RR，石头科技 2016 年出品）**，因为太老旧已经无法正常服役。与其让它吃灰，不如拆开来大干一场：
 
-1. **Reverse-engineer** its hardware and embedded Linux system
-2. **Replace / extend the firmware** with a modern Linux distribution
-3. **Turn it into a programmable robot chassis** — controllable via WiFi, scriptable, sensor-accessible
-4. **Document everything** so others can do the same
+- 逆向分析它的硬件和嵌入式 Linux 系统
+- 刷入现代 Linux 发行版，替换原厂固件
+- 把一台「扫地机」改造成 **可通过 WiFi 遥控、可编程的机器人底盘**
+- 完整记录过程，让其他人也能复现
 
-The end goal: a **fully open-source, Linux-running, remote-programmable robot platform** on affordable, accessible hardware.
-
----
-
-## 🤖 Target Device
-
-| Spec | Detail |
-|------|--------|
-| **Product** | 米家扫地机器人 / Mi Robot Vacuum |
-| **Model** | **SDJQR01RR** (also listed as STYTJ01YM) |
-| **OEM** | Roborock (石头科技) for Xiaomi |
-| **Released** | August 2016 |
-| **CPU** | Allwinner R16 — Quad-core ARM Cortex-A7 @ 1.2 GHz |
-| **RAM** | 256 MB DDR3 |
-| **Storage** | 512 MB NAND Flash |
-| **WiFi** | Realtek RTL8189ETV (802.11 b/g/n, 2.4 GHz) |
-| **OS** | Custom Linux (ARMv7, Buildroot-based) |
-| **Battery** | 5200 mAh Li-ion (14.4 V) |
-
-### Sensors & Actuators
-
-| Component | Details |
-|-----------|---------|
-| **LDS** | Laser Distance Sensor (SLAM navigation, 360° scanning, ~6 m range) |
-| **Ultrasonic Radar** | Forward obstacle detection |
-| **Cliff Sensors** | 4× infrared drop sensors (front, left, right, rear) |
-| **IMU** | 6-axis gyroscope + accelerometer |
-| **Wheel Odometers** | 2× magnetic encoders on drive wheels |
-| **Bumper** | Front collision detection (microswitch) |
-| **Drive Wheels** | 2× BLDC motors with encoders |
-| **Main Brush** | 1× BLDC motor |
-| **Side Brush** | 1× BLDC motor |
-| **Suction Fan** | 1× BLDC motor (variable speed) |
+> 一句话：**让退役的扫地机器人，变成你的下一台机器人开发平台。**
 
 ---
 
-## 🗺️ Roadmap
+## 目标硬件
 
-### Phase 1 — Reconnaissance 🔍
-- [ ] Open the device, photograph all PCBs
-- [ ] Identify key chips: SoC, RAM, Flash, WiFi, motor drivers, sensor interfaces
-- [ ] Locate UART / JTAG / USB debug pads
-- [ ] Attempt serial console access (UART)
-- [ ] Dump original firmware / boot logs
+| 规格 | 详情 |
+|------|------|
+| **产品** | 米家扫地机器人 / Mi Robot Vacuum |
+| **型号** | SDJQR01RR（亦标为 STYTJ01YM） |
+| **代工厂** | 石头科技 Roborock |
+| **发布时间** | 2016 年 8 月 |
+| **CPU** | 全志 Allwinner R16，四核 ARM Cortex-A7 @ 1.2GHz |
+| **内存** | 256 MB DDR3 |
+| **存储** | 512 MB NAND Flash |
+| **WiFi** | Realtek RTL8189ETV（802.11 b/g/n，2.4GHz） |
+| **电池** | 5200 mAh 锂电（14.4V） |
+| **系统** | 定制 Linux（ARMv7，Buildroot 系） |
 
-### Phase 2 — Understanding the Stock System 🧠
-- [ ] Analyze boot process (bootloader, kernel, init system)
-- [ ] Identify motor control protocol (PWM? UART to motor driver MCU?)
-- [ ] Reverse-engineer sensor data streams (LDS, IMU, odometers, cliff, ultrasonic)
-- [ ] Map GPIO pin assignments
-- [ ] Understand the WiFi / cloud communication protocol
+**传感器与执行器一览：**
 
-### Phase 3 — Rooting & Custom Firmware 🔓
-- [ ] Achieve permanent root access (serial, firmware modification)
-- [ ] Evaluate existing community projects (Valetudo, Dustcloud)
-- [ ] Cross-compile a modern Linux kernel for Allwinner R16
-- [ ] Build or adapt a minimal rootfs (Buildroot / Yocto / Debian armhf)
-- [ ] Boot custom Linux from SD card or NAND
-
-### Phase 4 — Robot Chassis Platform 🤖
-- [ ] Write kernel drivers for all sensors and actuators
-- [ ] Develop a hardware abstraction layer (HAL) — unified API for sensors + motors
-- [ ] Implement WiFi-based remote control (WebSocket / HTTP API)
-- [ ] ROS 2 integration (publish sensor data, subscribe to velocity commands)
-- [ ] SLAM demo using the built-in LDS
-- [ ] Autonomous navigation demo
-
-### Phase 5 — Polish & Community 🚀
-- [ ] 3D-printable accessory mounts (camera, Raspberry Pi, sensors)
-- [ ] Web-based control dashboard
-- [ ] Full documentation and build guide
-- [ ] Publish everything as open source
+| 组件 | 说明 |
+|------|------|
+| LDS 激光雷达 | 360° 激光测距，SLAM 导航核心 |
+| 超声波雷达 | 前方障碍物检测 |
+| 悬崖传感器 | 4 组红外传感器 |
+| IMU | 六轴陀螺仪 + 加速度计 |
+| 里程计 | 2 组驱动轮磁编码器 |
+| 碰撞传感器 | 前撞微动开关 |
+| 驱动轮 ×2 | BLDC 电机 + 编码器 |
+| 主刷 / 边刷 / 风机 | 各 1 个 BLDC 电机 |
 
 ---
 
-## 📁 Repository Structure
+## 路线图
+
+### 第一阶段 —— 侦察
+- [ ] 拆机，拍摄所有 PCB 高清照片
+- [ ] 识别关键芯片：SoC、RAM、Flash、WiFi、电机驱动、传感器接口
+- [ ] 定位 UART / JTAG / USB 调试触点
+- [ ] 尝试串口终端接入
+- [ ] 导出原始固件 / 启动日志
+
+### 第二阶段 —— 理解原厂系统
+- [ ] 分析启动流程（bootloader → kernel → init）
+- [ ] 查明电机控制协议（PWM？串口？）
+- [ ] 逆向传感器数据流（LDS、IMU、里程计、悬崖、超声波）
+- [ ] 映射 GPIO 引脚分配
+- [ ] 理解 WiFi / 云端通信协议
+
+### 第三阶段 —— 获取 Root 权限 & 定制固件
+- [ ] 实现持久 root 访问
+- [ ] 评估社区项目（Valetudo、Dustcloud）
+- [ ] 为 Allwinner R16 交叉编译现代 Linux 内核
+- [ ] 构建 / 适配最小 rootfs（Buildroot / Yocto / Debian armhf）
+- [ ] 从 SD 卡或 NAND 启动自定义 Linux
+
+### 第四阶段 —— 机器人底盘平台
+- [ ] 编写传感器和电机驱动的内核驱动
+- [ ] 开发硬件抽象层（HAL）—— 统一的传感器 + 电机 API
+- [ ] 实现 WiFi 遥控（WebSocket / HTTP API）
+- [ ] ROS 2 集成（发布传感器数据，订阅速度指令）
+- [ ] 基于 LDS 的 SLAM 演示
+- [ ] 自主导航演示
+
+### 第五阶段 —— 打磨 & 社区共享
+- [ ] 3D 打印扩展支架（摄像头、树莓派等）
+- [ ] 网页版控制面板
+- [ ] 完整文档和构建指南
+- [ ] 全部开源发布
+
+---
+
+## 目录结构
 
 ```
 Project.Villy/
-├── README.md                   # This file
-├── docs/                       # Documentation
-│   ├── hardware/               # PCB photos, chip datasheets, pinouts
-│   ├── firmware/               # Boot process, firmware analysis
-│   └── build/                  # Build guides, cross-compilation notes
-├── firmware/                   # Custom firmware / kernel patches
-│   ├── kernel/                 # Linux kernel config and patches
-│   └── rootfs/                 # Buildroot / Yocto configurations
-├── hal/                        # Hardware Abstraction Layer
-├── software/                   # Robot control software
-│   ├── api/                    # HTTP / WebSocket control API
-│   └── web/                    # Web-based control dashboard
-├── ros2/                       # ROS 2 packages
-├── 3d-models/                  # 3D-printable accessories
-└── tools/                      # Debugging & development utilities
+├── README.md                # 本文件
+├── docs/                    # 文档
+│   ├── hardware/            # PCB 照片、芯片数据手册、引脚定义
+│   ├── firmware/            # 启动流程、固件分析
+│   └── build/               # 构建指南、交叉编译笔记
+├── firmware/                # 定制固件 / 内核补丁
+│   ├── kernel/              # Linux 内核配置与补丁
+│   └── rootfs/              # Buildroot / Yocto 配置
+├── hal/                     # 硬件抽象层
+├── software/                # 机器人控制软件
+│   ├── api/                 # HTTP / WebSocket 控制 API
+│   └── web/                 # 网页控制面板
+├── ros2/                    # ROS 2 包
+├── 3d-models/               # 3D 打印模型
+└── tools/                   # 调试与开发工具
 ```
 
 ---
 
-## 🔗 References & Community
+## 社区参考
 
-- [Valetudo](https://github.com/Hypfer/Valetudo) — Cloud-free firmware for robot vacuums
-- [Dustcloud](https://github.com/dgiese/dustcloud) — MITM proxy for Xiaomi robot vacuums
-- [Allwinner R16 Datasheet](https://linux-sunxi.org/R16) — Linux-sunxi community wiki
-- [Roborock Firmware Analysis](https://github.com/ghoost82/roborock-firmware) — Community firmware reverse engineering
-
----
-
-## ⚠️ Disclaimer
-
-This project is for **educational and research purposes only**. The device is my personal property, no longer under warranty, and is being used as a hardware hacking platform. All work is done on my own device.
+- [Valetudo](https://github.com/Hypfer/Valetudo) —— 扫地机器人去云端固件
+- [Dustcloud](https://github.com/dgiese/dustcloud) —— 小米扫地机器人中间人代理
+- [Allwinner R16 @ linux-sunxi](https://linux-sunxi.org/R16) —— 全志 R16 社区文档
+- [Roborock Firmware Analysis](https://github.com/ghoost82/roborock-firmware) —— 石头扫地机固件分析
 
 ---
 
-## 📜 License
+## 免责声明
 
-MIT License — see [LICENSE](LICENSE) file when added.
+本项目仅供 **学习与研究**。所用设备为本人自有财产，已过保修期。所有工作均在自有设备上完成。
 
 ---
 
-*"What's old can be new again — if you're willing to open it up and rewrite the rules."*
+> *"旧物新生，始于拆开它、改写规则的那一刻。"*
