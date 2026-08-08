@@ -1,5 +1,7 @@
-# Build artifacts
+# Build outputs
+out/
 build/
+dist/
 *.o
 *.ko
 *.img
@@ -9,16 +11,17 @@ build/
 # Kernel
 vmlinux
 System.map
+*.dtb
 
-# Cross-compilation
-toolchain/
-output/
+# Dependencies
+node_modules/
 
 # Python
 __pycache__/
 *.pyc
 .venv/
 venv/
+*.egg-info/
 
 # IDE
 .vscode/
@@ -27,11 +30,35 @@ venv/
 # OS
 .DS_Store
 Thumbs.db
+*~
 
 # Logs
 *.log
 
-# Secrets
+# Secrets & Credentials
 .env
 *.key
 *.pem
+*.p12
+private/
+
+# Firmware binaries
+*.ext4
+*.squashfs
+*.tar.gz
+*.tar.xz
+
+# Frontend build
+frontend/dist/
+
+# Backend
+backend/instance/
+backend/*.db
+
+# Teardown (keep dir, ignore contents unless documented)
+hardware/teardown/*
+!hardware/teardown/.gitkeep
+
+# Firmware images
+firmware/images/*
+!firmware/images/.gitkeep

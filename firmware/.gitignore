@@ -1,0 +1,6 @@
+*.img
+*.bin
+*.ext4
+*.squashfs
+out/
+build/

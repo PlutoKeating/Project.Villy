@@ -1,0 +1,6 @@
+# Photos are large, keep them out of git
+*.jpg
+*.png
+*.heic
+*.raw
+!teardown/.gitkeep
