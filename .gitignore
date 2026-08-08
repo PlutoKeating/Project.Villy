@@ -1,0 +1,37 @@
+# Build artifacts
+build/
+*.o
+*.ko
+*.img
+*.bin
+*.elf
+
+# Kernel
+vmlinux
+System.map
+
+# Cross-compilation
+toolchain/
+output/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Secrets
+.env
+*.key
+*.pem
