@@ -1,8 +1,9 @@
 window.$docsify = {
   name: 'Project.Villy',
+  nameLink: '/',
   repo: 'https://github.com/PlutoKeating/Project.Villy',
-  loadSidebar: '_sidebar.md',
-  loadNavbar: '_navbar.md',
+  homepage: 'README.md',
+  loadSidebar: '/_sidebar.md',
   subMaxLevel: 3,
   auto2top: true,
   search: {
