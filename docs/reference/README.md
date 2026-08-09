@@ -1,4 +1,4 @@
-# 小米扫地机器人 SDJQR01RR 逆向工程参考手册
+# 小米扫地机器人 SDJQR02RR 逆向工程参考手册
 
 > **Project.Villy** — 旧物新生，从拆开它的那一刻开始。
 
@@ -22,7 +22,7 @@
 
 | 术语 | 全称 / 说明 |
 |------|-------------|
-| **SDJQR01RR** | 小米扫地机器人 1 代国行型号 |
+| **SDJQR02RR** | 小米扫地机器人 1 代国行型号 |
 | **R16** | Allwinner 全志 R16 SoC（4×Cortex-A7, Mali400MP2） |
 | **FEL** | Failsafe Engine Loader — Allwinner BootROM USB 刷写模式 |
 | **sunxi** | Allwinner SoC 的 Linux 主线移植项目 |

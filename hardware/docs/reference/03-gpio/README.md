@@ -1,10 +1,10 @@
 # 1.3 GPIO 引脚映射
 
-> 本节记录 Allwinner R16 SoC GPIO 引脚与外设的连接关系。最终映射需拆机后通过万用表通断测试和内核 `sysfs` 验证。
+> 本节记录 Allwinner A33 SoC GPIO 引脚与外设的连接关系。最终映射需拆机后通过万用表通断测试和内核 `sysfs` 验证。
 
 ---
 
-## Allwinner R16 GPIO 组概览
+## Allwinner A33 GPIO 组概览
 
 | GPIO 组 | 引脚数 | 推测用途 |
 |---------|--------|----------|
@@ -80,5 +80,5 @@
 ## 参考资料
 
 - linux-sunxi GPIO 文档：https://linux-sunxi.org/GPIO
-- Allwinner R16 Datasheet Pinmux 章节
+- Allwinner A33 Datasheet Pinmux 章节
 - sunxi-pinctrl 绑定文档（内核 Documentation/devicetree/bindings/pinctrl/）

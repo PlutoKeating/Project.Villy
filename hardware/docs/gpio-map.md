@@ -1,7 +1,7 @@
 # GPIO 引脚映射
 
-> 目标设备：Xiaomi Mi Robot Vacuum SDJQR01RR
-> SoC：Allwinner R16 (Quad Cortex-A7)
+> 目标设备：Xiaomi Mi Robot Vacuum SDJQR02RR
+> SoC：Allwinner A33 (Quad Cortex-A7)
 
 ## 状态
 
@@ -19,7 +19,7 @@
 
 ## SoC 引脚资源
 
-Allwinner R16 引脚资源（待拆机后核实）：
+Allwinner A33 引脚资源（待拆机后核实）：
 
 ### GPIO 组
 

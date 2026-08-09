@@ -6,12 +6,12 @@
 
 ## 主板整体结构
 
-SDJQR01RR 内部主要有两块 PCB：
+SDJQR02RR 内部主要有两块 PCB：
 
 ### 主板（Mainboard）
 
 位于机器内部中央，承载：
-- Allwinner R16 SoC + DDR3 RAM + NAND Flash
+- Allwinner A33 SoC + DDR3 RAM + NAND Flash
 - WiFi 模块（RTL8189ETV，板载或子板）
 - IMU 传感器（MPU-6050）
 - 电源管理电路
@@ -21,7 +21,7 @@ SDJQR01RR 内部主要有两块 PCB：
 ### 电机驱动板（Motor Driver Board）
 
 位于底盘，承载：
-- STM32F103 MCU（电机控制）
+- GD32F103VCT6 MCU（电机控制）
 - 驱动轮 MOSFET H 桥驱动
 - 主刷/边刷/风机 MOSFET 驱动
 - 过流检测电路
@@ -50,7 +50,7 @@ SDJQR01RR 内部主要有两块 PCB：
 
 ### 主板 TOP 面
 
-- 中央：Allwinner R16（BGA，有散热片覆盖）
+- 中央：Allwinner A33（BGA，有散热片覆盖）
 - 左侧：DDR3 RAM（BGA，与 R16 相邻）
 - 右侧：NAND Flash（TSOP-48 或 BGA）
 - 角落：RTL8189ETV WiFi 模块

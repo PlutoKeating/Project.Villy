@@ -31,10 +31,10 @@ Dustbuilder 是一个在线工具，用户输入设备信息后自动生成 root
 - **FEL 固件**：通过 USB FEL 模式执行，无需刷写 NAND
 - **Installer 固件**：已有 shell 权限时使用的安装器
 
-### 使用流程（Roborock Gen1）
+### 使用流程（Dreame/3irobotix CRL200S）
 
 1. 访问 https://builder.dontvacuum.me/
-2. 选择设备型号（如 `roborock.vacuum.v1`）
+2. 选择设备型号（如 `dreame.crl200s`）
 3. 上传对应版本的原厂固件
 4. 选择需要的功能（Valetudo、SSH、WiFi 配置等）
 5. 下载生成的定制固件
@@ -64,9 +64,9 @@ Dustbuilder 是一个在线工具，用户输入设备信息后自动生成 root
 
 ---
 
-## 关键发现：SDJQR01RR 的 Dustbuilder 支持
+## 关键发现：SDJQR02RR 的 Dustbuilder 支持
 
-SDJQR01RR（Roborock Gen1 `roborock.vacuum.v1`）是 Dustbuilder 最早支持的机型之一。这意味着：
+SDJQR02RR（Dreame/3irobotix CRL200S `dreame.crl200s`）是 Dustbuilder 最早支持的机型之一。这意味着：
 
 - ✅ 已有成熟的原厂固件 root 方案
 - ✅ 已有 FEL 模式进入方法验证

@@ -1,6 +1,6 @@
 # 2.6 Debian armhf 移植
 
-> 在 SDJQR01RR 上运行完整 Debian armhf 系统，提供丰富的软件包生态。
+> 在 SDJQR02RR 上运行完整 Debian armhf 系统，提供丰富的软件包生态。
 
 ---
 

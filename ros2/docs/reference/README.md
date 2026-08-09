@@ -1,6 +1,6 @@
 # 第 4 章：ROS 2 集成评估参考
 
-> 评估在 Allwinner R16 (256MB RAM, ARMv7) 上引入 ROS 2 / micro-ROS 的可行性。
+> 评估在 Allwinner A33 (256MB RAM, ARMv7) 上引入 ROS 2 / micro-ROS 的可行性。
 
 ---
 

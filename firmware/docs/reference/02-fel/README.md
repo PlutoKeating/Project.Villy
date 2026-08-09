@@ -78,7 +78,7 @@ md5sum nand-backup.bin
 sudo sunxi-fel write 0x42000000 zImage
 
 # 写入设备树
-sudo sunxi-fel write 0x43000000 sun8i-a33-sdjqr01rr.dtb
+sudo sunxi-fel write 0x43000000 sun8i-a33-sdjqr02rr.dtb
 
 # 写入 initramfs
 sudo sunxi-fel write 0x44000000 initramfs.cpio.gz

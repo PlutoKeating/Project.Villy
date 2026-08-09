@@ -1,6 +1,6 @@
 # 2.4 内核配置与设备树
 
-> 为 SDJQR01RR 定制 Linux 内核，编写适配硬件的设备树（DTS）。
+> 为 SDJQR02RR 定制 Linux 内核，编写适配硬件的设备树（DTS）。
 
 ---
 
@@ -61,7 +61,7 @@ CONFIG_INV_MPU6050_IIO=m
 
 ```
 sun8i-a33.dtsi                # SoC 级别定义（主线提供）
-  └── sun8i-r16-sdjqr01rr.dts # 板级定义（需自行编写）
+  └── sun8i-a33-sdjqr02rr.dts # 板级定义（需自行编写）
 ```
 
 ### 基础 DTS 模板
@@ -72,8 +72,8 @@ sun8i-a33.dtsi                # SoC 级别定义（主线提供）
 #include "sunxi-common-regulators.dtsi"
 
 / {
-    model = "Xiaomi Mi Robot Vacuum SDJQR01RR";
-    compatible = "xiaomi,sdjqr01rr", "allwinner,sun8i-r16", "allwinner,sun8i-a33";
+    model = "Xiaomi Mi Robot Vacuum SDJQR02RR";
+    compatible = "xiaomi,sdjqr02rr", "allwinner,sun8i-a33", "allwinner,sun8i-a33";
 
     chosen {
         stdout-path = "serial0:115200n8";
@@ -145,10 +145,10 @@ sun8i-a33.dtsi                # SoC 级别定义（主线提供）
 
 ```bash
 # 编译
-dtc -I dts -O dtb -o sun8i-r16-sdjqr01rr.dtb sun8i-r16-sdjqr01rr.dts
+dtc -I dts -O dtb -o sun8i-a33-sdjqr02rr.dtb sun8i-a33-sdjqr02rr.dts
 
 # 反编译（验证）
-dtc -I dtb -O dts sun8i-r16-sdjqr01rr.dtb > verify.dts
+dtc -I dtb -O dts sun8i-a33-sdjqr02rr.dtb > verify.dts
 
 # 或通过内核构建系统
 make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- dtbs
@@ -179,4 +179,4 @@ cat /sys/class/gpio/gpio32/value
 - 内核 sunxi DTS 目录：`arch/arm/boot/dts/allwinner/`
 - pinctrl 绑定：`Documentation/devicetree/bindings/pinctrl/allwinner,sunxi-pinctrl.txt`
 - sunxi GPIO 外部中断：https://linux-sunxi.org/External_interrupts
-- Banana Pi M2 Magic DTS 参考（R16 板）：主线内核 `sun8i-r16-bananapi-m2m.dts`
+- Banana Pi M2 Magic DTS 参考（R16 板）：主线内核 `sun8i-a33-bananapi-m2m.dts`

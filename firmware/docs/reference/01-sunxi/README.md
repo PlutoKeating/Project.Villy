@@ -61,7 +61,7 @@ make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- menuconfig
 |------|------|
 | `u-boot/u-boot` | 主线 U-Boot（推荐，包含 sunxi 支持） |
 
-主线 U-Boot 已支持 Allwinner R16/A33，使用 `Sinovoip_BPI_M2_Plus` 或 `bananapi_m2_magic` 作为参考配置。
+主线 U-Boot 已支持 Allwinner A33/A33，使用 `Sinovoip_BPI_M2_Plus` 或 `bananapi_m2_magic` 作为参考配置。
 
 ### sunxi-tools
 
@@ -77,7 +77,7 @@ make
 
 ---
 
-## 主线支持状态（R16/A33）
+## 主线支持状态（A33）
 
 | 功能 | 主线版本 | 状态 | 说明 |
 |------|---------|------|------|

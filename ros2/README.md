@@ -7,7 +7,7 @@
 
 | 维度 | 约束 |
 |------|------|
-| CPU | Allwinner R16, 4× Cortex-A7 @ 1.2GHz |
+| CPU | Allwinner A33, 4× Cortex-A7 @ 1.2GHz |
 | RAM | 256 MB DDR3（可用约 192MB 给应用层） |
 | 存储 | 512 MB NAND（可用约 256MB 给 rootfs + ROS） |
 | 架构 | ARMv7 (armhf) |

@@ -119,7 +119,7 @@ git commit -m "<clear local commit message>"
 - 一个逻辑变更一个提交。
 - 文档整理、结构调整、功能修改、修复问题应尽量分开提交。
 - **Commit message 格式**：`<emoji> <模块>: <简短描述>`
-  - 示例：`🔧 firmware: 添加 Allwinner R16 交叉编译工具链 submodule`
+  - 示例：`🔧 firmware: 添加 Allwinner A33 交叉编译工具链 submodule`
   - 示例：`📝 hardware: 记录 UART 启动日志`
 - 提交信息必须说明真实意图，不允许使用 `update`、`fix`、`misc` 这类无法审查的消息。
 - 提交前必须检查变更范围，避免把 `.env`、构建产物、依赖目录、缓存、本地数据库等内容纳入提交。

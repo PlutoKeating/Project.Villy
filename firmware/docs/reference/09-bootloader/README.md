@@ -1,6 +1,6 @@
 # 2.9 U-Boot 引导加载器
 
-> 主线 U-Boot 已支持 Allwinner R16/A33。本节记录配置、编译和部署流程。
+> 主线 U-Boot 已支持 Allwinner A33/A33。本节记录配置、编译和部署流程。
 
 ---
 
@@ -18,7 +18,7 @@
 git clone --depth 1 https://github.com/u-boot/u-boot.git
 cd u-boot
 
-# 使用 Banana Pi M2 Magic 配置（R16/A33 兼容）
+# 使用 Banana Pi M2 Magic 配置（A33 兼容）
 make Sinovoip_BPI_M2_Plus_defconfig
 
 # 自定义（可选）
@@ -45,7 +45,7 @@ u-boot.img                     # U-Boot 镜像格式
 CONFIG_ARM=y
 CONFIG_ARCH_SUNXI=y
 CONFIG_MACH_SUN8I_A33=y        # R16 使用 A33 代码
-CONFIG_DEFAULT_DEVICE_TREE="sun8i-r16-sdjqr01rr"
+CONFIG_DEFAULT_DEVICE_TREE="sun8i-a33-sdjqr02rr"
 CONFIG_SPL=y
 CONFIG_SPL_SPI_SUNXI=y
 CONFIG_MMC_SUNXI_SLOT_EXTRA=1  # SDIO WiFi
@@ -87,10 +87,10 @@ Linux Kernel
 setenv boot_nand 'nand read 0x42000000 0x800000 0x500000; nand read 0x43000000 0x5800000 0x20000; bootz 0x42000000 - 0x43000000'
 
 # 从 SD 卡启动
-setenv boot_mmc 'fatload mmc 0 0x42000000 zImage; fatload mmc 0 0x43000000 sun8i-r16-sdjqr01rr.dtb; bootz 0x42000000 - 0x43000000'
+setenv boot_mmc 'fatload mmc 0 0x42000000 zImage; fatload mmc 0 0x43000000 sun8i-a33-sdjqr02rr.dtb; bootz 0x42000000 - 0x43000000'
 
 # 从 FEL 网络启动（开发调试用）
-setenv boot_fel 'tftp 0x42000000 zImage; tftp 0x43000000 sun8i-r16-sdjqr01rr.dtb; bootz 0x42000000 - 0x43000000'
+setenv boot_fel 'tftp 0x42000000 zImage; tftp 0x43000000 sun8i-a33-sdjqr02rr.dtb; bootz 0x42000000 - 0x43000000'
 
 # 保存
 saveenv
@@ -109,8 +109,8 @@ Trying to boot from NAND
 
 U-Boot 2024.01 (Jan 01 2024 - 00:00:00 +0000)
 
-CPU:   Allwinner R16 (SUN8I 1667)
-Model: Xiaomi SDJQR01RR
+CPU:   Allwinner A33 (SUN8I 1667)
+Model: Xiaomi SDJQR02RR
 DRAM:  256 MiB
 NAND:  512 MiB
 In:    serial@1c28000
@@ -145,11 +145,11 @@ sudo dd if=u-boot-sunxi-with-spl.bin of=/dev/sdX bs=1024 seek=8
 
 ## 社区经验
 
-来自 linux-sunxi 邮件列表的讨论（Allwinner R16 U-Boot 主线）：
+来自 linux-sunxi 邮件列表的讨论（Allwinner A33 U-Boot 主线）：
 
 > 用户尝试从 SD 卡启动主线 U-Boot 到 R16，使用 `sudo dd if=uboot.img of=/dev/sdX bs=1024 seek=40`，但串口无输出。只有从原厂 BSP 提取的 100MB uboot.img 有效。
 
-这说明 **R16 的主线 U-Boot 可能仍有兼容性问题**，需要在 SDJQR01RR 上实际测试。备选方案：
+这说明 **R16 的主线 U-Boot 可能仍有兼容性问题**，需要在 SDJQR02RR 上实际测试。备选方案：
 1. 使用原厂 U-Boot + 主线内核
 2. 从原厂固件提取并修改 U-Boot 配置
 3. 使用 sunxi 社区补丁版 U-Boot

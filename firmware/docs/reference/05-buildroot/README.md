@@ -1,6 +1,6 @@
 # 2.5 Buildroot 最小系统构建
 
-> 使用 Buildroot 构建适用于 SDJQR01RR 的最小 Linux 系统。
+> 使用 Buildroot 构建适用于 SDJQR02RR 的最小 Linux 系统。
 
 ---
 
@@ -121,7 +121,7 @@ make -j$(nproc)
 ```
 output/images/
 ├── zImage                         # Linux 内核
-├── sun8i-r16-sdjqr01rr.dtb        # 设备树
+├── sun8i-a33-sdjqr02rr.dtb        # 设备树
 ├── rootfs.squashfs                # squashfs rootfs
 ├── rootfs.ext2                    # ext2 rootfs
 ├── rootfs.tar                     # rootfs tar（部署用）
@@ -136,7 +136,7 @@ output/images/
 
 ```bash
 sudo sunxi-fel write 0x42000000 output/images/zImage
-sudo sunxi-fel write 0x43000000 output/images/sun8i-r16-sdjqr01rr.dtb
+sudo sunxi-fel write 0x43000000 output/images/sun8i-a33-sdjqr02rr.dtb
 sudo sunxi-fel write 0x44000000 output/images/rootfs.squashfs
 sudo sunxi-fel exec 0x42000000
 ```

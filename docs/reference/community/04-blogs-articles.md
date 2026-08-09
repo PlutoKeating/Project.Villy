@@ -37,7 +37,7 @@
 
 | 标题 | 作者 | 链接 |
 |------|------|------|
-| Allwinner R16 / A33 U-Boot Mainline | Google Groups | https://groups.google.com/g/linux-sunxi/c/hpxB29c9rB8 |
+| Allwinner A33 / A33 U-Boot Mainline | Google Groups | https://groups.google.com/g/linux-sunxi/c/hpxB29c9rB8 |
 | Allwinner Tina OS for R16 | ARMdevices | https://armdevices.net/2016/05/30/allwinner-open-source-tina-os-linux-for-allwinner-r8-r16-r40-r58-chip-and-banana-pi-dev-boards/ |
 | Banana Pi M2 Magic (R16) | Banana Pi | https://banana-pi.org/en/banana-pi-sbcs/49.html |
 

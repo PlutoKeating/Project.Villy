@@ -1,6 +1,6 @@
 # Backend 后端服务
 
-> 本模块负责在 SDJQR01RR 上运行的 Flask API 服务、硬件抽象层和认证体系。
+> 本模块负责在 SDJQR02RR 上运行的 Flask API 服务、硬件抽象层和认证体系。
 
 ## 技术栈
 

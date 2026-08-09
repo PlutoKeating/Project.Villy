@@ -1,10 +1,10 @@
 # Firmware 固件与刷写
 
-> 本模块负责 SDJQR01RR 的交叉编译工具链管理、内核构建、rootfs 创建和刷写流程。
+> 本模块负责 SDJQR02RR 的交叉编译工具链管理、内核构建、rootfs 创建和刷写流程。
 
 ## 工作范围
 
-- Allwinner R16 交叉编译工具链（ARMv7）
+- Allwinner A33 交叉编译工具链（ARMv7）
 - 主线 Linux (sunxi) 内核适配
 - 设备树 (DTS) 编写
 - Buildroot / Debian rootfs 构建

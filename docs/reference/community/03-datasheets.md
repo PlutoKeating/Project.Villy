@@ -1,17 +1,23 @@
 # 5.3 芯片数据手册索引
 
-> 关键芯片的官方数据手册和参考文档。
-
 ---
 
 ## SoC
 
 | 芯片 | 文档 | 链接 |
 |------|------|------|
-| **Allwinner R16** | 数据手册 v1.4 | https://linux-sunxi.org/images/b/b3/R16_Datasheet_V1.4_(1).pdf |
-| Allwinner R16 | 产品简介 | https://www.allwinnertech.com/uploads/pdf/202102041951349c.pdf |
-| Allwinner R16 | Kokomo Tech 页面 | https://www.kokomotech.com/allwinner-r16/ |
-| Allwinner R16 | EEWORLD 数据手册 | https://en.eeworld.com.cn/datasheet/new_part/R16,allwinner,22617555.html |
+| **Allwinner A33** | linux-sunxi Wiki | https://linux-sunxi.org/A33 |
+| **Allwinner A33** | 数据手册 (Datasheet) | https://linux-sunxi.org/images/4/4b/Allwinner_A33_Datasheet_V1.1.pdf |
+| **Allwinner A33** | 用户手册 (User Manual) | https://linux-sunxi.org/images/1/1e/Allwinner_A33_User_Manual_V1.1.pdf |
+
+---
+
+## 电机控制 MCU
+
+| 芯片 | 文档 | 链接 |
+|------|------|------|
+| **GD32F103VCT6** | GigaDevice 官方 | https://www.gigadevice.com/product/mcu/gd32f103 |
+| **GD32F103** | 数据手册 | https://www.gigadevice.com/product/mcu/gd32f103 |
 
 ---
 
@@ -19,9 +25,8 @@
 
 | 芯片 | 功能 | 文档 |
 |------|------|------|
-| **MPU-6050** | 6 轴 IMU | https://invensense.tdk.com/wp-content/uploads/2015/02/MPU-6000-Register-Map1.pdf |
-| **MPU-6050** | 数据手册 | https://invensense.tdk.com/wp-content/uploads/2015/02/MPU-6000-Datasheet1.pdf |
-| **RPLIDAR A1** | LDS 激光雷达 | https://www.slamtec.com/en/Support#rplidar-a-series |
+| **MPU-6050** | 6 轴 IMU | https://invensense.tdk.com/wp-content/uploads/2015/02/MPU-6000-Datasheet1.pdf |
+| **MPU-6050** | 寄存器手册 | https://invensense.tdk.com/wp-content/uploads/2015/02/MPU-6000-Register-Map1.pdf |
 
 ---
 
@@ -29,7 +34,7 @@
 
 | 芯片 | 功能 | 文档 |
 |------|------|------|
-| **RTL8189ETV** | WiFi b/g/n SDIO | Realtek 官方（需 NDA） |
+| **RTL8189ETV** | WiFi b/g/n SDIO | Realtek 官方 (需 NDA) |
 
 ---
 
@@ -37,16 +42,7 @@
 
 | 芯片 | 功能 | 参考 |
 |------|------|------|
-| **AXP223** | PMIC | http://dl.linux-sunxi.org/AXP/AXP223-en.pdf |
-
----
-
-## 电机驱动
-
-| 芯片 | 功能 | 文档 |
-|------|------|------|
-| STM32F103 | 电机控制 MCU | https://www.st.com/en/microcontrollers-microprocessors/stm32f103.html |
-| STM32 电机控制生态 | BLDC/PMSM 驱动 | https://www.st.com/content/st_com/en/ecosystems/stm32-motor-control-ecosystem.html |
+| **AXP223** | 21-ch PMIC | http://dl.linux-sunxi.org/AXP/AXP223-en.pdf |
 
 ---
 
@@ -64,10 +60,6 @@
 
 | 文档 | 链接 |
 |------|------|
-| Dustcloud 文档仓库 | https://github.com/dgiese/dustcloud-documentation |
-| Valetudo 安装文档 | https://valetudo.cloud/pages/installation/roborock/ |
-| Dustbuilder 使用指南 | https://github.com/dgiese/dustbuilder-howto |
-
----
-
-*下一节：[5.4 博客与文章](./04-blogs-articles.md)*
+| codetiger/VacuumRobot（CRL200S 元器件图） | https://github.com/codetiger/VacuumRobot |
+| Valetudo 安装文档 (Dreame) | https://valetudo.cloud/pages/installation/dreame/ |
+| robotinfo.dev 硬件数据库 | https://robotinfo.dev/ |

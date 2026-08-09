@@ -1,6 +1,6 @@
 # HMAC-SHA256 认证方案
 
-> 本文档设计 Project.Villy 的 API 认证体系，平衡安全性与 Allwinner R16 的硬件资源约束。
+> 本文档设计 Project.Villy 的 API 认证体系，平衡安全性与 Allwinner A33 的硬件资源约束。
 
 ---
 

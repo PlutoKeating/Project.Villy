@@ -1,6 +1,6 @@
 # 构建指南
 
-> 本文档描述从源码构建适用于 SDJQR01RR 的 Linux 内核和 rootfs 的完整流程。
+> 本文档描述从源码构建适用于 SDJQR02RR 的 Linux 内核和 rootfs 的完整流程。
 
 ## 环境要求
 

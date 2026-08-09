@@ -43,10 +43,10 @@
 
 | # | 任务 | 交付物 | 依赖 |
 |---|------|--------|------|
-| 2.1 | 引入 Allwinner R16 交叉编译工具链（submodule） | `firmware/submodules/` | 1.2 |
+| 2.1 | 引入 Allwinner A33 交叉编译工具链（submodule） | `firmware/submodules/` | 1.2 |
 | 2.2 | 引入主线 Linux (sunxi) 源码（submodule） | `firmware/submodules/` | 1.2 |
-| 2.3 | 编写内核 `.config` 适配 SDJQR01RR | `firmware/configs/kernel.config` | 2.2 |
-| 2.4 | 编写设备树 DTS | `firmware/dts/sdjqr01rr.dts` | 1.3 |
+| 2.3 | 编写内核 `.config` 适配 SDJQR02RR | `firmware/configs/kernel.config` | 2.2 |
+| 2.4 | 编写设备树 DTS | `firmware/dts/sdjqr02rr.dts` | 1.3 |
 | 2.5 | 构建最小 rootfs（Buildroot） | `firmware/docs/build-guide.md` | 2.1 |
 | 2.6 | 刷写流程文档与工具脚本 | `firmware/docs/flashing-guide.md` | 2.5 |
 | 2.7 | 实际刷写并记录结果 | `firmware/docs/flashing-log.md` | 2.6 |

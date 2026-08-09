@@ -1,6 +1,6 @@
 # 2.3 交叉编译工具链
 
-> 为 Allwinner R16 (ARMv7) 配置交叉编译环境，用于编译内核、U-Boot、Buildroot 和用户空间程序。
+> 为 Allwinner A33 (ARMv7) 配置交叉编译环境，用于编译内核、U-Boot、Buildroot 和用户空间程序。
 
 ---
 
@@ -80,7 +80,7 @@ make INSTALL_MOD_PATH=/tmp/kernel-modules modules_install
 cd u-boot/
 
 # 配置
-make Sinovoip_BPI_M2_Plus_defconfig  # R16/A33 兼容配置
+make Sinovoip_BPI_M2_Plus_defconfig  # A33 兼容配置
 
 # 构建
 make -j$(nproc)
