@@ -53,7 +53,7 @@ sudo sunxi-fel --list --verbose
 
 # 读取 SoC 信息
 sudo sunxi-fel version
-# 输出：AWUSBFEX soc=1667(R16) ver=0001 44 08 scratchpad=00017e00 00000000 00000000
+# 输出：AWUSBFEX soc=1667(A33) ver=0001 44 08 scratchpad=00017e00 00000000 00000000
 ```
 
 ---
